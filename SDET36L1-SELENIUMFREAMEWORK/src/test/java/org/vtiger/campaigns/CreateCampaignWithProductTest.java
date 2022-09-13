@@ -58,7 +58,7 @@ public class CreateCampaignWithProductTest {
 		seleniumusability.implicitWait(longTimeout);
 		
 		//Create Object for POM classes
-		LoginPage loginPage=new LoginPage(driver);
+		LoginPage loginPage=new LoginPage();
 		
 		seleniumusability.openApplication(url);
 		loginPage.loginAction(username, password);

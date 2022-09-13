@@ -5,12 +5,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.tyss.genericUsability.SeleniumUsability;
+import org.tyss.genericUsability.UtilityObjectClass;
 
 public class CommonPage 
 {
-	public CommonPage(WebDriver driver)
+	public CommonPage()
 	{
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(UtilityObjectClass.getDriver(), this);
 	}
 	
 	@FindBy(xpath="//a[text()='More']")

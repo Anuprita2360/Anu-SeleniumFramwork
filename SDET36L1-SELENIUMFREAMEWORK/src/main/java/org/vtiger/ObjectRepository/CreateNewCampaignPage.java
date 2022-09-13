@@ -4,12 +4,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.tyss.genericUsability.UtilityObjectClass;
 
 public class CreateNewCampaignPage 
 {
-	public CreateNewCampaignPage(WebDriver driver)
+	public CreateNewCampaignPage()
 	{
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(UtilityObjectClass.getDriver(), this);
 	}
 	
 	@FindBy(xpath="//input[@name='campaignname']")

@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.tyss.genericUsability.UtilityObjectClass;
 
 public class LoginPage 
 {
@@ -16,9 +17,9 @@ public class LoginPage
     @FindBy(xpath="//input[@id='submitButton']")
     private WebElement loginBtn;
     
-    public LoginPage(WebDriver driver)
+    public LoginPage()
     {
-    	PageFactory.initElements(driver, this);
+    	PageFactory.initElements(UtilityObjectClass.getDriver(), this);
     }
     
     //Business Library

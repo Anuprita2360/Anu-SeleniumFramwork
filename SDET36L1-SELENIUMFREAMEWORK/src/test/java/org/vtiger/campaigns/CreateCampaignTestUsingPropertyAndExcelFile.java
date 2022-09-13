@@ -2,6 +2,7 @@ package org.vtiger.campaigns;
 
 import java.io.IOException;
 
+import org.apache.xmlbeans.impl.xb.xsdschema.Public;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -68,11 +69,11 @@ public class CreateCampaignTestUsingPropertyAndExcelFile {
 
 		//create object for POM Classes
 
-		LoginPage loginPage=new LoginPage(driver);
-		CommonPage commonPage=new CommonPage(driver);
-		CampaignPage campaignpage=new CampaignPage(driver);
-		CreateNewCampaignPage createNewCampaignPage=new CreateNewCampaignPage(driver);
-		CampaignInformationpage campaignInformationPage=new CampaignInformationpage(driver);
+		LoginPage loginPage=new LoginPage();
+		CommonPage commonPage=new CommonPage();
+		CampaignPage campaignpage=new CampaignPage();
+		CreateNewCampaignPage createNewCampaignPage=new CreateNewCampaignPage();
+		CampaignInformationpage campaignInformationPage=new CampaignInformationpage();
 
 
 		seleniumusability.openApplication(url);
@@ -101,7 +102,6 @@ public class CreateCampaignTestUsingPropertyAndExcelFile {
 		excelfileusability.closeWorkbook();
 		commonPage.clickSignOut(seleniumusability);
 		seleniumusability.closeBrowser();
-
 
 	}
 

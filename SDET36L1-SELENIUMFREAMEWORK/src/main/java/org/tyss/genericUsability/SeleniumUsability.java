@@ -7,6 +7,7 @@ import java.util.Set;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -58,6 +59,7 @@ public class SeleniumUsability
 		{
 			System.out.println("you entered wrong browser key in the property file");
 		}
+		
 		return driver;
 
 	}
@@ -267,20 +269,29 @@ public class SeleniumUsability
 	
 	/**
 	 * This method is used to take the particular element ScreenShot
-	 * @param element
+	 * @param 
 	 * @param currentClass
 	 * @param javausability
 	 */
 	
-	public void takeScreenShotElement(WebElement element,Object currentClass,JavaUsability javausability)
+	public void takeScreenShotElement(WebElement element)
 	{
 		File src = element.getScreenshotAs(OutputType.FILE);
-		File dst = new File("./elementScreenShot/"+currentClass.getClass().getSimpleName()+javausability.getCurrentDate("dd_MM_yyyy_HH_mm_sss"));
+		File dst = new File("./elementScreenShot/");
 		try {
 			FileUtils.copyFile(src, dst);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	public String takeScreenShotPage()
+	{
+		
+		TakesScreenshot ts=(TakesScreenshot)UtilityObjectClass.getDriver();
+		String path=ts.getScreenshotAs(OutputType.BASE64);
+		return path ;
+		
 	}
 	
 	/**

@@ -21,7 +21,8 @@ public class Base_class
 	protected String timeout;
 	//protected long longTimeout;
 
-	public static WebDriver driver;
+	public WebDriver driver;
+	
 	
 //	@BeforeSuite(alwaysRun = true)
 //	public void configBS()
@@ -40,7 +41,7 @@ public class Base_class
 
 		propertyfileusability.initialisePropertyFile(IConstantUsability.VTIGERPROPERTYFILEPATH);
 		excelfileusability.initialiseExcelFile(IConstantUsability.VTIGEREXCELFILEPATH);
-
+	
 		USERNAME=propertyfileusability.getDataFronProperty("username");
 		PASSWORD = propertyfileusability.getDataFronProperty("password");
 		URL =propertyfileusability.getDataFronProperty("url");
@@ -53,11 +54,14 @@ public class Base_class
 		//run time polymorphism
 		//seleniumusability.implicitWait(longTimeout);
 		driver=seleniumusability.setDriver(BROWSER);
+	
+		UtilityObjectClass.setDriver(driver);
+		
 		seleniumusability.maximiseBrowser();
 		seleniumusability.initialiseActions();
 
-		loginPage=new LoginPage(driver);
-		commonPage = new CommonPage(driver);
+		loginPage=new LoginPage();
+		commonPage = new CommonPage();
 
 		// Navigate to url 
 		seleniumusability.openApplication(URL);
@@ -84,7 +88,7 @@ public class Base_class
 	@AfterSuite(alwaysRun = true)
 	public void AfterSuite()
 	{
-		System.out.println("-close DB=");
+		System.out.println("=close DB=");
 	}    
 }
 

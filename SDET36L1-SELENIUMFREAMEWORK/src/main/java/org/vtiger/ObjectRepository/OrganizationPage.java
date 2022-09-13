@@ -8,12 +8,13 @@ package org.vtiger.ObjectRepository;
 	import org.openqa.selenium.support.FindBy;
 	import org.openqa.selenium.support.PageFactory;
 	import org.tyss.genericUsability.SeleniumUsability;
+import org.tyss.genericUsability.UtilityObjectClass;
 
 	public class OrganizationPage {
 			WebDriver driver;
-			public OrganizationPage(WebDriver driver) {
+			public OrganizationPage() {
 				this.driver=driver;
-				PageFactory.initElements(driver, this);
+				PageFactory.initElements(UtilityObjectClass.getDriver(), this);
 			}
 
 			@FindBy(xpath="//span[@name='Accounts_listViewCountContainerName']")

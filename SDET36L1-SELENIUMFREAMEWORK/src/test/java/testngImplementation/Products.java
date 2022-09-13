@@ -1,10 +1,11 @@
 package testngImplementation;
 
 import org.openqa.selenium.By;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import org.tyss.genericUsability.Base_class;
 import org.tyss.genericUsability.IConstantUsability;
-
+@Listeners(org.tyss.genericUsability.ListenerImplementation.class)
 public class Products extends Base_class
 {
 	@Test

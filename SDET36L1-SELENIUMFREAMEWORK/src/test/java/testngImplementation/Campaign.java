@@ -1,10 +1,12 @@
 package testngImplementation;
 
 import java.util.Set;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import org.tyss.genericUsability.Base_class;
 import org.tyss.genericUsability.ExcelFileUsability;
@@ -12,12 +14,14 @@ import org.tyss.genericUsability.IConstantUsability;
 import org.tyss.genericUsability.JavaUsability;
 import org.tyss.genericUsability.PropertyFileUsability;
 import org.tyss.genericUsability.SeleniumUsability;
+import org.tyss.genericUsability.UtilityObjectClass;
 import org.vtiger.ObjectRepository.CampaignInformationpage;
 import org.vtiger.ObjectRepository.CampaignPage;
 import org.vtiger.ObjectRepository.CommonPage;
 import org.vtiger.ObjectRepository.CreateNewCampaignPage;
 import org.vtiger.ObjectRepository.LoginPage;
 
+@Listeners(org.tyss.genericUsability.ListenerImplementation.class)
 public class Campaign extends Base_class
 {
 	@Test
@@ -27,9 +31,9 @@ public class Campaign extends Base_class
 		//Fetch the data from Excel File
 		String expectedCampaignname = excelfileusability.getDataFromExcel(2, 1, SheetName)+randomNumber;
 		//create object for POM Classes
-		CampaignPage campaignpage=new CampaignPage(driver);
-		CreateNewCampaignPage createNewCampaignPage=new CreateNewCampaignPage(driver);
-		CampaignInformationpage campaignInformationPage=new CampaignInformationpage(driver);
+		CampaignPage campaignpage=new CampaignPage();
+		CreateNewCampaignPage createNewCampaignPage=new CreateNewCampaignPage();
+		CampaignInformationpage campaignInformationPage=new CampaignInformationpage();
 
 		//commonPage.clickMore(seleniumusability);
 		commonPage.clickMore(seleniumusability);
@@ -123,7 +127,7 @@ public class Campaign extends Base_class
 			excelfileusability.writedataToExcel(IConstantUsability.VTIGEREXCELFILEPATH);
 			
 		}
-	    
+	    Assert.fail();
 //	    Assert.assertEquals(actualCampaignname, expectedCampaignname);
 		//Assert.assertEquals(actualProductName, expectedProductName);
 	}

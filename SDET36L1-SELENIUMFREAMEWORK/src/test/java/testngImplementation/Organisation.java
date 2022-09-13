@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import org.tyss.genericUsability.Base_class;
 import org.tyss.genericUsability.ExcelFileUsability;
@@ -13,7 +14,7 @@ import org.tyss.genericUsability.IConstantUsability;
 import org.tyss.genericUsability.JavaUsability;
 import org.tyss.genericUsability.PropertyFileUsability;
 import org.tyss.genericUsability.SeleniumUsability;
-
+@Listeners(org.tyss.genericUsability.ListenerImplementation.class)
 public class Organisation extends Base_class
 {
 	@Test

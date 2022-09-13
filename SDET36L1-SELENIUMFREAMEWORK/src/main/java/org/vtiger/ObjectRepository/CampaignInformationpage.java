@@ -1,15 +1,15 @@
 package org.vtiger.ObjectRepository;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.tyss.genericUsability.UtilityObjectClass;
 
 public class CampaignInformationpage 
 {
-	public CampaignInformationpage(WebDriver driver)
+	public CampaignInformationpage()
 	{
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(UtilityObjectClass.getDriver(), this);
 	}
 	@FindBy(xpath = "//span[@id='dtlview_Campaign Name']")
 	private WebElement actualCampaignNameText;
