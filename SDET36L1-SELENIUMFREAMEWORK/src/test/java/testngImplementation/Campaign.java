@@ -127,8 +127,5 @@ public class Campaign extends Base_class
 			excelfileusability.writedataToExcel(IConstantUsability.VTIGEREXCELFILEPATH);
 			
 		}
-	    Assert.fail();
-//	    Assert.assertEquals(actualCampaignname, expectedCampaignname);
-		//Assert.assertEquals(actualProductName, expectedProductName);
 	}
 }

@@ -33,7 +33,4 @@ public class ThreadSafeClass
 		driver.set(actdriver);
 	}
 	
-	
-
-
 }

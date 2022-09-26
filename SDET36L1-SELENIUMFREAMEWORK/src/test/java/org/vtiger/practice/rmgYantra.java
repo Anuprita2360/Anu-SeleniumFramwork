@@ -23,8 +23,8 @@ public class rmgYantra {
 	   SeleniumUsability seleniumusability=new SeleniumUsability();
 	   
 	   int randomNumber=javausability.getrandomNumber();
-	   String expectedProjectName="sdet47"+randomNumber;
-	   javausability.printStatement("ExpectedProject");
+	   String expectedProjectName="sdet4785"+randomNumber;
+	   javausability.printStatement(expectedProjectName);
 	   Driver dbDriver = new Driver();
 		DriverManager.registerDriver(dbDriver);
 		DriverManager.getConnection("jdbc:mysql://localhost:3306/projects","root","root")
