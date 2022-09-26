@@ -8,6 +8,7 @@ public class Sample1
 	public void display()
 	{
 		System.out.println("Amit modified this Scriot");
+		System.out.println("amit again done some changes ");
 	}
 
 }
